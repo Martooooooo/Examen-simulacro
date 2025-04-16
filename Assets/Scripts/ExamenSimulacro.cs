@@ -24,9 +24,14 @@ public class ExamenSimulacro : MonoBehaviour
         }
         int profesoresJuveniles = (juveniles / 20);
         int profesoresInfantiles = (infantiles / 10);
+        int juvenilesListaEspera = juveniles % 20;
+        int infantilesListaEspera = infantiles % 20;
         int profes = profesoresInfantiles + profesoresJuveniles;
-        int Coordinadores;
-        int listaDeEspera;
+        int Coordinadores = profes / 5;
+            if (totalProfes % 5 != 0) {
+            Coordinadores++;
+                }
+        int listaDeEspera = 0;
         Debug.Log("Se necesitan" + profesoresJuveniles + "profesores para los inscriptos juveniles");
         Debug.Log("Se necesitan" + profesoresInfantiles + "profesores para los inscriptos infantiles");
         Debug.Log("Se necesitan" + Coordinadores + "coordinadores");
